@@ -33,24 +33,25 @@ export default function App() {
 
   return (
     <div className="relative min-h-screen overflow-hidden text-white font-[Poppins,sans-serif]">
+      {/* 🎥 Background video */}
       <video
         className="fixed inset-0 w-full h-full object-cover z-0"
-        src="/media/real-madrid-bg.mp4"
+        src="./media/real-madrid-bg.mp4"
         autoPlay
         loop
         muted
         playsInline
       />
-      <div className="fixed inset-0 bg-black/55 backdrop-blur-sm z-10"></div>
+      <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
 
       {/* 🔝 Header */}
       <div className="relative z-20 max-w-7xl mx-auto px-6 py-8">
-        <header className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-black/30 backdrop-blur-md p-4 rounded-xl border border-yellow-400/20 shadow-xl">
+        <header className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-black/40 backdrop-blur-md p-5 rounded-xl border border-yellow-400/30 shadow-xl">
           <div className="flex items-center gap-4">
             <img
-              src="/media/real-madrid-logo.png"
+              src="./media/real-madrid-logo.png"
               alt="Real Madrid"
-              className="w-14 h-14 sm:w-16 sm:h-16 object-contain drop-shadow-[0_0_10px_rgba(255,255,255,0.5)]"
+              className="w-14 h-14 sm:w-16 sm:h-16 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]"
             />
             <div>
               <h1 className="text-xl sm:text-2xl font-extrabold text-yellow-300">
@@ -69,7 +70,7 @@ export default function App() {
           <div className="flex items-center gap-3">
             <button
               onClick={togglePlay}
-              className="bg-yellow-400 text-black font-semibold px-4 py-2 rounded-full shadow hover:scale-105 transition"
+              className="bg-yellow-400 text-black font-semibold px-5 py-2.5 rounded-full shadow-lg hover:shadow-[0_0_15px_rgba(255,215,0,0.5)] hover:scale-105 active:scale-95 transition-all duration-300"
             >
               {isPlaying
                 ? language === "ru-RU"
@@ -84,61 +85,48 @@ export default function App() {
                     : "Play Anthem"}
             </button>
 
-            <select
-              value={language}
-              onChange={(e) => setLanguage(e.target.value)}
-              className="
-    relative bg-gradient-to-r from-black/70 via-black/60 to-black/70
-    border border-yellow-400/50 text-yellow-300 text-sm font-semibold
-    px-5 py-2.5 rounded-full shadow-[0_0_15px_rgba(255,215,0,0.2)]
-    backdrop-blur-md transition-all duration-500 ease-in-out
-    hover:border-yellow-300 hover:shadow-[0_0_25px_rgba(255,215,0,0.4)]
-    hover:bg-gradient-to-r hover:from-yellow-500/10 hover:to-yellow-300/10
-    active:scale-95 focus:ring-2 focus:ring-yellow-400/60 focus:border-yellow-300
-    appearance-none cursor-pointer
-    before:content-[''] before:absolute before:inset-0 before:rounded-full 
-    before:bg-gradient-to-r before:from-yellow-300/20 before:to-transparent 
-    before:opacity-0 hover:before:opacity-100 before:transition-all before:duration-500 
-    after:content-['▼'] after:absolute after:right-4 after:top-1/2 after:-translate-y-1/2 
-    after:text-yellow-300 after:opacity-80 after:pointer-events-none
-  "
-            >
-              <option
-                value="ru-RU"
+            {/* 🌐 Select language */}
+            <div className="relative">
+              <select
+                value={language}
+                onChange={(e) => setLanguage(e.target.value)}
                 className="
-      bg-black text-yellow-300 font-medium 
-      hover:bg-yellow-400/30 hover:text-white
-      active:bg-yellow-400/40 transition-all duration-300
-    "
+                  appearance-none cursor-pointer
+                  bg-gradient-to-r from-black/80 via-black/70 to-black/80
+                  border border-yellow-400/50 text-yellow-300 text-sm font-semibold
+                  px-5 py-2.5 pr-10 rounded-full
+                  shadow-[0_0_15px_rgba(255,215,0,0.2)]
+                  backdrop-blur-md transition-all duration-500 ease-in-out
+                  hover:border-yellow-300 hover:shadow-[0_0_25px_rgba(255,215,0,0.4)]
+                  hover:bg-gradient-to-r hover:from-yellow-400/10 hover:to-yellow-300/10
+                  active:scale-95 focus:ring-2 focus:ring-yellow-400/50 focus:border-yellow-300
+                "
               >
-                Русский
-              </option>
+                <option
+                  value="ru-RU"
+                  className="bg-black text-yellow-300 font-medium"
+                >
+                  Русский
+                </option>
+                <option
+                  value="uz-UZ"
+                  className="bg-black text-yellow-300 font-medium"
+                >
+                  O'zbekcha
+                </option>
+                <option
+                  value="en-US"
+                  className="bg-black text-yellow-300 font-medium"
+                >
+                  English
+                </option>
+              </select>
 
-              <option
-                value="uz-UZ"
-                className="
-      bg-black text-yellow-300 font-medium 
-      hover:bg-yellow-400/30 hover:text-white
-      active:bg-yellow-400/40 transition-all duration-300
-    "
-              >
-                O'zbekcha
-              </option>
-
-              <option
-                value="en-US"
-                className="
-      bg-black text-yellow-300 font-medium 
-      hover:bg-yellow-400/30 hover:text-white
-      active:bg-yellow-400/40 transition-all duration-300
-    "
-              >
-                English
-              </option>
-            </select>
-
-
-
+              {/* ▼ custom arrow */}
+              <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-yellow-300 opacity-80 text-sm">
+                ▼
+              </span>
+            </div>
           </div>
         </header>
 
@@ -169,7 +157,7 @@ export default function App() {
               ].map((stat, i) => (
                 <div
                   key={i}
-                  className="bg-black/40 p-4 rounded-lg border border-yellow-400/20 text-center"
+                  className="bg-black/40 p-4 rounded-lg border border-yellow-400/20 text-center hover:bg-yellow-400/10 transition"
                 >
                   <div className="text-2xl font-bold text-yellow-300">
                     {stat.value}
@@ -211,7 +199,7 @@ export default function App() {
       </div>
 
       {/* 🎵 Audio */}
-      <audio ref={audioRef} src="/media/real-anthem.mp3" preload="auto" />
+      <audio ref={audioRef} src="./media/real-anthem.mp3" preload="auto" />
     </div>
   );
 }
