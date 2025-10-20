@@ -189,9 +189,9 @@ export default function App() {
               className="h-72 sm:h-96 rounded-xl overflow-hidden"
             >
               {[
-                "https://raw.githubusercontent.com/rmboost/media/main/el-clasico-1.jpg",
-                "https://raw.githubusercontent.com/rmboost/media/main/el-clasico-2.jpg",
-                "https://raw.githubusercontent.com/rmboost/media/main/el-clasico-3.jpg",
+                "https://static.euronews.com/articles/stories/09/00/91/70/1200x675_cmsv2_e5e3dae4-3ab7-574b-9d11-181d92c81cee-9009170.jpg",
+                "https://assets.promediateknologi.id/crop/0x0:966x693/0x0/webp/photo/p3/75/2024/04/21/Snapinstaapp_397027164_1051084476078511_4517475566604568931_n_1080-100043003.jpg",
+                "https://images.supersport.com/media/yrlhvdie/el-clasico-headline-241024s.png?width=1920&quality=90&format=webp",
               ].map((src, i) => (
                 <SwiperSlide key={i}>
                   <img
