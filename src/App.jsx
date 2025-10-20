@@ -44,7 +44,6 @@ export default function App() {
       />
       <div className="fixed inset-0 bg-black/60 backdrop-blur-sm z-10"></div>
 
-      {/* 🔝 Header */}
       <div className="relative z-20 max-w-7xl mx-auto px-6 py-8">
         <header className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-black/40 backdrop-blur-md p-5 rounded-xl border border-yellow-400/30 shadow-xl">
           <div className="flex items-center gap-4">
