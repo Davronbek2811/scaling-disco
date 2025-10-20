@@ -3,6 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
+import ghimn from '/media/real-anthem.mp3';
+import bgVideo from '/media/real-madrid-bg.mp4';
+import logo from '/media/real-madrid-logo.png';
 
 export default function App() {
   const audioRef = useRef(null);
@@ -36,7 +39,7 @@ export default function App() {
       {/* 🎥 Background video */}
       <video
         className="fixed inset-0 w-full h-full object-cover z-0"
-        src="./media/real-madrid-bg.mp4"
+        src={bgVideo}
         autoPlay
         loop
         muted
@@ -48,7 +51,7 @@ export default function App() {
         <header className="flex flex-col sm:flex-row items-center justify-between gap-6 bg-black/40 backdrop-blur-md p-5 rounded-xl border border-yellow-400/30 shadow-xl">
           <div className="flex items-center gap-4">
             <img
-              src="./media/real-madrid-logo.png"
+              src={logo}
               alt="Real Madrid"
               className="w-14 h-14 sm:w-16 sm:h-16 object-contain drop-shadow-[0_0_12px_rgba(255,255,255,0.5)]"
             />
@@ -198,7 +201,7 @@ export default function App() {
       </div>
 
       {/* 🎵 Audio */}
-      <audio ref={audioRef} src="./media/real-anthem.mp3" preload="auto" />
+      <audio ref={audioRef} src={ghimn} preload="auto" />
     </div>
   );
 }
